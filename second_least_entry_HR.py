@@ -55,46 +55,23 @@ The lowest grade of  belongs to Tina. The second lowest grade of  belongs to bot
 """
 
 if __name__ == '__main__':
-    m1,m2=None,None
-    secnames=[]
+    mini,mini2=1001,1002
+    a=[]
     fnames=[]
+    b=[]
+    
     for _ in range(int(raw_input())):
         name = raw_input()
         score = float(raw_input())
-        if(m1>score):
-            m1,m2=m1,score
-            secnames=fnames[:]
-            fnames=[]
-            fnames.append(name)
-        if(m1<=score):
-            if(m1<score):
-                if(m1==None and m2==None):
-                    m1=score
-                    fnames.append(name)
-                elif(m2>score):
-                    secnames=[]
-                    secnames.append(name)
-                    m2=score
-                elif(m2==score):
-                    secnames.append(name)
-                    m2=score
-                
-                else:
-                    fnames.append(name)
-            elif(m1==score):
-                fnames.append(name)
-
-            
-    for i in secnames:
-        print(i)            
+        if score<mini:
+            mini2 = mini
+            mini = score
+        elif score<>mini and score<mini2:
+            mini2 = score
+        a.append([name, score])
     
-            
-            
-        
-            
-                
-
-            
-        
-        
+    b = [x[0] for x in a if x[1]==mini2]
+    b.sort()
     
+    for y in b:
+        print y
